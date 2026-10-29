@@ -1,0 +1,65 @@
+USE db111;  
+
+SELECT COUNT(*) FROM salaries; 
+
+SHOW TABLES;
+
+CREATE TABLE salaries 
+AS SELECT * FROM DB911.SALARIES; 
+
+SELECT * FROM salaries; 
+
+-- display work_year column from the table 
+
+SELECT work_year 
+FROM salaries; 
+
+-- display multiple columns from the salaries table 
+
+SELECT work_year, experience_level, job_title, salary_in_usd, remote_ratio, company_location
+FROM salaries;  
+
+-- display all columns from salaries table 
+
+SELECT * 
+FROM salaries; 
+
+--  display all the unique elements from a particular column 
+
+SELECT DISTINCT work_year 
+FROM salaries ; 
+
+-- DISPLAY ALL THE JOB ROLES IN THE GIVEN DATASET 
+
+SELECT DISTINCT job_title 
+FROM salaries; 
+
+-- Operators 
+-- (Comparison ) 
+
+-- display all the 2020 employees
+SELECT * 
+FROM salaries 
+WHERE work_year = 2020;
+
+-- display all the employees for the job role "AI Engineer" 
+
+SELECT * 
+FROM salaries 
+WHERE job_title = "AI Engineer"; 
+
+SELECT * 
+FROM salaries 
+WHERE remote_ratio != 0; 
+
+-- display all employees having salary less than 200000
+
+SELECT * 
+FROM salaries 
+WHERE salary_in_usd < 200000; 
+
+SELECT * 
+FROM salaries 
+WHERE salary_in_usd > 100000; 
+
+
